@@ -1,0 +1,161 @@
+/* Seetha Menon — academic site
+   Single shared stylesheet. Edit colours in :root below. */
+
+:root {
+  --ink: #1c1c1e;
+  --muted: #5b6470;
+  --accent: #1a3a5c;       /* deep navy */
+  --accent-soft: #e9eef3;
+  --rule: #e2e5ea;
+  --bg: #ffffff;
+  --max: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* Header / nav */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0 0;
+}
+.site-header .name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+.site-header .role {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 4px 0 0;
+}
+nav.main {
+  display: flex;
+  gap: 26px;
+  margin-top: 20px;
+  border-top: 1px solid var(--rule);
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+nav.main a {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+nav.main a.active, nav.main a:hover { color: var(--accent); text-decoration: none; }
+
+/* Layout */
+main { padding: 40px 0 64px; }
+
+/* Home hero */
+.hero { display: flex; gap: 34px; align-items: flex-start; }
+.hero .photo {
+  flex: 0 0 190px;
+  width: 190px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 18%;   /* frame head + upper body, not the centre */
+  border-radius: 6px;
+  background: var(--accent-soft);
+  border: 1px solid var(--rule);
+}
+.hero .intro { flex: 1 1 auto; }
+.hero p:first-child { margin-top: 0; }
+
+.btnrow { margin: 22px 0 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.btn:hover { background: #15304c; text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn.ghost:hover { background: var(--accent-soft); }
+
+/* Section headings */
+h2.section {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 6px;
+  margin: 0 0 22px;
+}
+
+/* Publications */
+.pub { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.pub:last-child { border-bottom: 0; }
+.pub .title { font-weight: 600; }
+.pub .meta { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.pub .venue { font-style: italic; }
+.pub .links { margin-top: 8px; font-size: 14px; }
+.pub .links a { margin-right: 16px; }
+.pub details { margin-top: 8px; }
+.pub summary {
+  cursor: pointer; color: var(--accent); font-size: 14px; font-weight: 600;
+}
+.pub details p { font-size: 15px; color: #33373d; margin: 10px 0 0; }
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+  padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle;
+}
+
+/* Awards / timeline */
+.year { margin: 28px 0 8px; }
+.year h3 {
+  font-family: Georgia, serif; color: var(--accent); font-size: 18px; margin: 0 0 6px;
+}
+.year ul { margin: 0; padding-left: 20px; }
+.year li { margin: 6px 0; }
+
+/* Media */
+.media-item { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.media-item:last-child { border-bottom: 0; }
+.media-item .date { color: var(--muted); font-size: 14px; }
+.media-item .headline { font-weight: 600; margin: 2px 0 4px; }
+.outlets { margin-top: 6px; font-size: 14px; }
+.outlets a { margin-right: 16px; }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 26px 0 48px;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer .contact a { color: var(--muted); }
+footer .social { margin-top: 8px; }
+footer .social a { margin-right: 16px; font-weight: 600; }
+
+@media (max-width: 620px) {
+  .hero { flex-direction: column; }
+  .hero .photo { width: 160px; height: 210px; }
+  body { font-size: 16px; }
+}
