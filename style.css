@@ -8,7 +8,7 @@
   --accent-soft: #e9eef3;
   --rule: #e2e5ea;
   --bg: #ffffff;
-  --max: 860px;
+  --max: 1120px;
 }
 
 * { box-sizing: border-box; }
@@ -69,16 +69,16 @@ main { padding: 40px 0 64px; }
 /* Home hero */
 .hero { display: flex; gap: 34px; align-items: flex-start; }
 .hero .photo {
-  flex: 0 0 240px;
-  width: 240px;
-  height: 315px;
+  flex: 0 0 300px;
+  width: 300px;
+  height: 394px;
   object-fit: cover;
   object-position: 50% 18%;   /* frame head + upper body, not the centre */
   border-radius: 6px;
   background: var(--accent-soft);
   border: 1px solid var(--rule);
 }
-.hero .intro { flex: 1 1 auto; }
+.hero .intro { flex: 1 1 auto; text-align: justify; }
 .hero p:first-child { margin-top: 0; }
 
 .btnrow { margin: 22px 0 4px; display: flex; gap: 12px; flex-wrap: wrap; }
