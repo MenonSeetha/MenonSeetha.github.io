@@ -1,3 +1,39 @@
+# Deployment record — what was actually done (12 June 2026)
+
+- **GitHub username:** MenonSeetha
+- **Repo:** `MenonSeetha.github.io` (originally created as `SeethaMenon.github.io`, then renamed
+  so the repo name matches the username — required for a personal/user site).
+- **Live (GitHub URL):** https://menonseetha.github.io
+- **Custom domain:** seetha-menon.com — entered in Settings → Pages; DNS check in progress as of
+  12 June. After it goes green, tick **Enforce HTTPS** (certificate can take up to 24 h).
+- **Gotcha hit:** the `assets/` folder (headshot.jpg + Seetha_Menon_CV.pdf) was missed on first
+  upload, so the photo and CV link broke. Fixed by uploading the `assets` folder with its
+  structure intact. Lesson: every file must keep its path — `assets/headshot.jpg` etc.
+- **Pages enabling:** Settings → Pages → Source "Deploy from a branch", Branch **main**, folder
+  **/ (root)**. (On the first try this was left at "None" = disabled.)
+
+### DNS changes made at Wix (for rollback)
+Replaced the three Wix apex A records and the www CNAME. To **revert to Wix**, restore these
+original values:
+
+- A (host `seetha-menon.com`): `185.230.63.171`, `185.230.63.186`, `185.230.63.107`
+- CNAME (host `www.seetha-menon.com`): `cdn1.wixdns.net`
+- (`m.seetha-menon.com` → `www128.wixdns.net` was left untouched.)
+
+Current (GitHub) values now in place:
+- A (host `seetha-menon.com`): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- CNAME (host `www.seetha-menon.com`): `menonseetha.github.io`
+
+**Keep the Wix subscription active until https://seetha-menon.com reliably shows the new site.**
+
+### To edit the live site later
+The source files are in this `Website` folder. After changing any file locally (e.g. `style.css`),
+re-upload it to the repo (GitHub: the file → pencil/upload → Commit) for the change to appear live.
+
+---
+
+# Original step-by-step guide (kept for reference)
+
 # Deploying your site to GitHub Pages
 
 Your new site lives in this `Website` folder: four pages (`index.html`, `publications.html`,
